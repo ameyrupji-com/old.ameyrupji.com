@@ -1,0 +1,18 @@
+CACHE MANIFEST
+# Version 0.1
+index.html
+../template/mobile/css/jquery.mobile-1.0rc2.css
+../template/mobile/images/ajax-loader.png
+../template/mobile/images/ameyRupji.png
+../template/mobile/images/icon-search-black.png
+../template/mobile/images/icons-18-black.png
+../template/mobile/images/icons-18-white.png
+../template/mobile/images/icons-36-black.png
+../template/mobile/images/icons-36-white.png
+../template/mobile/images/location.jpg
+../template/mobile/images/menuback.png
+../template/mobile/images/mobileBack.jpg
+../template/mobile/images/tech.png
+../template/mobile/js/ios-orientationchange-fix.js
+../template/mobile/js/jquery.mobile-1.1.0.js
+../template/js/geolocation.js

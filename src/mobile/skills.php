@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Amey Rupji Mobile :: Skills and Projects</title>
+	<link rel="stylesheet" href="../template/mobile/css/jquery.mobile-1.0rc2.css" />
+	<script src="../template/js/jquery-1.7.1.min.js"></script>
+	<script src="../template/mobile/js/jquery.mobile-1.1.0.js"></script>
+    <script src="../template/js/jquery.validate.js"></script>
+    <link rel="shortcut icon" href="../template/images/favicon.gif">
+	
+</head> 
+<body class="ui-mobile-viewport">
+<?php include('menu.html'); ?>
+<div data-role="page" class="type-home" id="page">
+	<div data-role="header" data-position="inline" data-theme="b">
+        <a href="" id="slideMenu" data-role="none" class="menu"> Menu</a>
+        <h1>Skills & Projects</h1>
+        <a href="" data-rel="back" data-role="none" class="back"> Back</a>
+    </div>
+    
+	<div data-role="content-wrap">
+        <div id="adr-homeheader">
+            <a href="" id="ameyRupjiMobileLogo"></a>
+        </div>
+    	<div data-role="content" data-theme="d" class="ui-page-full">
+			<h1>Skills & Projects</h1><hr class="headerLine" />
+            <div data-role="navbar" class="tabMenu">
+                <ul>
+                    <li><a href="" class="ui-btn-active" id="skills">Skills</a></li>
+                    <li><a href="" id="projects">Academic Projects</a></li>
+                </ul>
+            </div><!-- /navbar -->
+			<div style="border:1px solid #CCC;">
+            	<div id="skillsDiv" class="tabs">
+            	  <p><strong>Programming Languages :</strong><br/> C, C++, C#, Java, Matlab<br/><br/>
+            	  <strong>Web Programming :</strong><br/> HTML, XML, CSS2 and CSS3, Java Script, jQuery, JSON, ASP.net C#, PHP<br/><br/>
+            	  <strong>Databases :</strong><br/> Microsoft SQL Server 2005/2008, MySQL<br/><br/>
+            	  <strong>Modeling and Concepts :</strong><br/> UML, OOAD, OOPS<br/><br/>
+            	  <strong>Operating Systems :</strong><br/> Windows XP/Vista/7, Linux<br/><br/>
+            	  <strong>Web Server :</strong><br/> Internet Information Services (IIS), Apache Tomcat<br/><br/>
+            	  <strong>Other Software :</strong><br/> Joomla, WordPress, Photoshop, Dreamweaver, Expression Web, Visual Studio</p>
+              </div>
+                <div id="projectsDiv" class="tabs">
+                	<h3>Course Scheduler <em>(2011 – Present)</em></h3>
+                    <ul>
+                        <li>Working on a project to develop a course scheduler for the Department of Computer Science TTU</li>
+                        <li>Improving the currently existing manual error prone and tedious departmental course scheduling process by an automated one.</li>
+                        <li>Developing in ASP.net C# using Microsoft Visual Studio 2010 with Microsoft SQL Server 2008 as the database.</li>
+                    </ul>
+                    
+                    <h3>A priority queue for a simplified agenda manager
+in a rule-based expert system shell <em>(Course - Analysis of Algorithms, Spring 2012)</em></h3> 
+                    <ul>
+                        <li>The goal was to implement a simplified agenda manager which reads a list of rules with priorities from a file and created a priority queue by using a heap to run the agenda manager</li>
+                        <li>This project was implemented in C with special consideration to make program is self-aware with graceful degradation (i.e. give rationales upon exit) when inputs do not fit the specification</li>
+                    </ul>
+                    
+                    <h3>Real Arithmetic Library <em>(Course - Scientific Computing, Fall 2011)</em></h3> 
+                    <ul>
+                        <li>Implemented a Real Arithmetic Library in Python that evaluates and real number arethmetic with the help of rational numbers. The generates the arithmetic opertaions had an accuracy of 10^(-20) decimals. </li>
+                    </ul>
+                    
+                    <h3>Quintic Equation Solver <em>(Course - Scientific Computing, Fall 2011)</em></h3> 
+                    <ul>
+                        <li>Implemented Quintic Equation(equation of degree 5) Solver using Python.</li>
+                        <li>This Project involved generating the roots of the given Quintic equation by mathematical algorithms such as Newton Raphson Method, Bisection Method, Mid Point Algorithm, and Secant Method.</li>
+                    </ul>
+                     
+                    <h3>V Space <em>(2009 – 2010)</em></h3>
+                    <ul>
+                        <li>Contributed in setting up an Intranet based portal for Department of Information Technology KJSCE.</li>
+                        <li>Administered and enhanced the portal features and ran periodic backups.</li>
+                        <li>The project was implemented in PHP using MySQL as the database.</li>
+                    </ul>
+                    
+                    <h3>Digital Security System through Images <em>(2009 – 2010)</em></h3>
+                    <ul>
+                        <li>Developed a security system using Images and a self-developed ‘Roll In Roll Back’ (RIRB) Algorithm for data encryption.</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+	<div data-role="footer" class="footer-docs" data-theme="f">
+    	<center>
+			<p style="color:#fff">Creative Commons Amey Rupji</p>
+        </center>
+	</div>
+</div>
+<script src="../template/mobile/js/ios-orientationchange-fix.js"></script>
+<script src="../template/mobile/js/ios-orientationchange-fix.js"></script>
+<script type="text/javascript">
+$(function () {   
+	$("#slideMenu").toggle(
+		function() {
+			$("#menu").css('display','block');
+			$("#menu").css('position','absolute');
+			$("#page").css('position','fixed');
+			$("#page").animate({marginLeft:"275px",},'slow',function(){ 
+				var startX;
+				var currentX;
+				var dx;
+				/*$('#page').live('swipeleft',function(event) {
+					$('#page').unbind('touchstart');
+					$('#page').unbind('touchmove');
+					$('#page').unbind('touchend');
+					$("#page").animate({marginLeft:"0px",},300,function(){
+						$("#menu").css('position','fixed');
+						$("#menu").css('display','none'); 
+					});
+					$("#page").css('position','absolute');
+				});*/
+				$('#page').bind('touchstart',function(e){
+					e.preventDefault();
+					startX = e.originalEvent.touches[0].pageX;
+				});
+				$('#page').bind('touchmove',function(e){
+					e.preventDefault();
+					currentX = e.originalEvent.touches[0].pageX;
+					dx = startX - currentX;
+					$("#page").animate({marginLeft:275 -dx,},0,function(){ 
+						if( dx > 265) {
+							$("#page").animate({marginLeft:"0px",},300,function(){
+								$("#menu").css('position','fixed');
+								$("#menu").css('display','none');
+							});
+							$("#page").css('position','absolute');
+							$('#page').unbind('touchstart');
+							$('#page').unbind('touchmove');
+							$('#page').unbind('touchend');
+						}
+					});
+				});
+				$('#page').bind('touchend',function(e){
+					e.preventDefault();
+					if($('#my_div').is(':hidden'))
+					{
+						$('#page').unbind('touchstart');
+						$('#page').unbind('touchmove');
+						$('#page').unbind('touchend');
+					}
+					else
+					{	 
+						$("#page").animate({marginLeft:275 -dx,},0,function(){ 
+							if( dx < 100) {
+								$("#page").animate({marginLeft:"275px",},300,function(){ });
+							}
+							else {
+								$("#page").animate({marginLeft:"0px",},300,function(){ 
+									$("#menu").css('position','fixed');
+									$("#menu").css('display','none');
+									$("#page").css('position','absolute');
+									$('#page').unbind('touchstart');
+									$('#page').unbind('touchmove');
+									$('#page').unbind('touchend');
+								});
+							}
+						});
+					}
+				});
+			});
+		},
+		function() {
+			$("#page").animate({marginLeft:"0px",},300,function(){
+				$("#menu").css('position','fixed');
+				$("#menu").css('display','none');
+			});
+			$("#page").css('position','absolute');
+		}
+	);
+	
+	$(".tabMenu ul li a#skills").click(function(){
+		$(".tabs").css('display','none');
+		$("#skillsDiv").fadeIn("slow");
+	});
+	$(".tabMenu ul li a#projects").click(function(){
+		$(".tabs").css('display','none');
+		$("#projectsDiv").fadeIn("slow");
+	});
+});
+</script>
+</body>
+</html>

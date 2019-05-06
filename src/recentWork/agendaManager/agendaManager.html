@@ -1,0 +1,145 @@
+<html>
+	<head>
+    	
+    </head>
+	<body>
+	<script type="text/javascript" language="javascript" src="../../template/js/jquery-1.7.1.min.js"></script>
+    <script src="../../template/js/jquery.validate.js"></script>
+   	<h1>A priority queue for a simplified agenda manager in a rule-based expert system shell</h1>
+    <h3><em>(Course - Analysis of Algorithms, Spring 2012)</em></h3>
+    <hr class="headerLine"/>
+    <h3>Goal</h3>
+    <hr class="headerLine"/>
+    <p>The goal of this project was to implement a simplified agenda manager which reads a list of rules with priorities from a file and created a heap by using a priority queue to run the manager</p>
+    <p><a href="/arupji/recentWork/agendaManager.pdf" target="_blank">View The full project specification</a></p>
+    
+    <h3>Team Members</h3><hr class="headerLine"/>
+    <p>Vishal Ghugare</p>
+    
+    <h3>Overview of the project</h3><hr class="headerLine"/>
+    <p><b>Implementation language: </b>C<p>
+    <p><b>Queue structure used</b><p>
+    <div id="loading" class="noMobile"><pre>typedef struct ListItem 
+{ 
+    int priority; 
+    char rule[RULE_LEN]; 
+    struct ListItem *next; 
+}</pre></div>
+	<h3>Implemented Functions</h3><hr class="headerLine"/>
+    <ul>
+    	<li><b>BuildQueue()</b><br/>
+        Builds a priority queue (heap) from an unsorted array of rule priority pairs. This function is usually called after inserting a rule into the queue by calling the Insert function. This function starts for the mid of the queue which is parent of the newest node inserted and runs a contest between the parent and newly added child. If the priority of parent is less than that of child then we interchange the parent and child. However the new parent might still be out of place at its new position, so have another contest between it and its parent in the tree and run the above check for the parent. We repeat this process until the new item either loses a contest (and therefore is in correct position in the heap) or reaches the root node.
+        <div id="loading" class="noMobile"><pre>Sorry I cannot provide the code as this course is currently ongoing. If you still want the code please 
+request for it submitting the form below</pre></div>
+        </li>
+        <li><b>Heapify()</b><br/>
+        This function is used by BuildQueue function to maintain the heap properly. When we add a new rule to the heap, a new node is added at the end of the queue. However, simply placing the new rule at that position is likely to violate the property of heap. That is, the new item might have a priority that is greater than the priority of its parent. The solution after placing the new item in the end of the queue, have a contest between the new item added and its parent in the tree. If the new item has higher priority, swap it with its parent. However the new item might still be out of place at its new position, so have another contest between it and its new parent in the tree. Repeat this process until the new item either loses a contest (and therefore is in correct position in the heap) or reaches the root node.
+        <div id="loading" class="noMobile"><pre>Sorry I cannot provide the code as this course is currently ongoing. If you still want the code please 
+request for it submitting the form below</pre></div>
+        </li>
+		<li><b>ExtractMax()</b><br/>
+        The insert function is used to add a new rule at the end of queue. This is done by first dynamically allocating a new node of the queue type and initializing it with the provided values. The queue structure is then maintained so that the Q_head pointer points to the starting node of the queue and Q_tail points to the ending node of the queue.
+        <div id="loading" class="noMobile"><pre>Sorry I cannot provide the code as this course is currently ongoing. If you still want the code please 
+request for it submitting the form below</pre></div>
+        </li>
+        <li><br><b>Delete()</b><br/>
+        Removes a rule from the queue by freeing the node from memory.
+        <div id="loading" class="noMobile"><pre>Sorry I cannot provide the code as this course is currently ongoing. If you still want the code please 
+request for it submitting the form below</pre></div>
+        </li>
+        <li><b>Main()</b><br//>
+        This function reads input file provided as arguments and performs the steps mentioned in the problem definition which are as follows:<br/>
+In each cycle, the agenda manager first deletes from the agenda the activated rule that was executed in a previous cycle. A list of new activated rules is given to the agenda manager to add to the agenda. Once a rule is added to the agenda, it remains there until it is executed. An agenda manager then determines the rule with highest priority for the inference engine to execute in this cycle. Only one rule can be executed in each cycle. A rule that has been executed and removed from the agenda may be put on the agenda again in the next cycle. The system halts when the agenda is empty or after it runs 30 cycles.<br/>
+It also checks input file for correct format while reading and displays necessary errors where ever required. The errors could be one of the following for the following rule input format:
+		<div id="loading" class="noMobile"><pre>rule1, priority1), (rule2, priority2) 
+(rule3, priority3)</pre></div>
+		<ul>
+        	<li>If there is no ‘(’ before rule1 string then it will give an error “Missing: opening bracket '('”</li>
+            <li>If there is no ‘,’ after rule1 then it will give an error “Missing: comma after rule!”</li>
+            <li>If priority1 is not detected as a number then it will give an error “Invalid priority for rule: rule1”</li>
+            <li>If there is no ‘)’ after priority1(numeric) then it will give an error “Missing: closing bracket ')' for rule:rule1”</li>
+            <li>Now if no ‘,’ is found after closing bracket then it will give an error “Missing comma after (rule1, priority1)”</li>
+            <li>If there is no ‘ ’(space after the ‘,’(comma)) then it will give an error “Missing space after (rule1, priority1),”</li>
+       	</ul>
+        This will be followed throughout the file</li>
+                <div id="loading" class="noMobile"><pre>Sorry I cannot provide the code as this course is currently ongoing. If you still want the code please 
+request for it submitting the form below</pre></div>
+        </li>
+    </ul>
+
+    
+    <div  class="noMobile">
+    <h3>Request Code</h3><hr class="headerLine"/>
+    <div style="width:750px;" >
+
+
+        <form name="requestForm" id="requestForm" method="post" action="../requestJSON.php" class="validate">
+            <p>Please enter your details below to request my a copy of my project implementation. Give me a day or two to get back to you.</p>
+            <p><strong>Note:</strong><br/>Please Enter a valid reason for the requesting the code and please use official email (no personal email like gmail, yahoo etc.) for faster response</p>
+            <div id="requestMsg"></div>
+            <div id="requestLoading" style="display: none;">
+                <img alt="loading" src="../template/images/ajax_load.gif" > Sending Email...
+            </div>
+            <!--<div id="map_canvas" style="width:100%; height:100px;"></div>-->
+            <div class="input-box">
+                <label for="name"><span class="reqBlue">*</span> Name</label>  
+                <input type="text" name="name" id="name" value="" placeholder="Name" class="required"/> 
+            </div>
+            <div class="input-box">
+                <label for="email"><span class="reqBlue">*</span> Email</label>
+                <input type="text" name="email" id="email" value="" placeholder="Email" class="required email"/> 
+            </div>
+            <div class="input-box">
+                <label for="reason"><span class="reqBlue">*</span> Reason for requesting code</label>
+                <input type="text" name="reason" id="reason" value="" placeholder="Reason"  class="required"/> 
+            </div>
+            <div class="submit">
+                <span class="req"><span class="reqBlue">*</span> Required Fields</span>
+                <button type="submit" id="requestSubmit" style="float:right;">Submit</button>
+                <div class="locationName"><img alt="loading" src="../template/images/ajax_load.gif"><div class="text"></div></div>
+                <a class="location off nyroModal" href="../geolocation.html"></a>
+            </div>
+        </form>
+    </div>
+    </div>
+	<script type="text/javascript">
+	$(function() {
+		getLocation();
+		$('#requestForm').validate({
+			rules: {
+				name: "required",
+				email: "required",
+				reason: "required"
+			},
+			messages: {
+				name: "Please enter your Name",
+				email: "Please enter your Email",
+				reason: "Please enter a reason for requesting my code"
+			},
+			submitHandler: function( form ) {
+				// disable submit button
+				$('#requestSubmit').attr('disabled', true);
+				var formData = $("#requestForm").serialize();
+				$('#requestLoading').css('display','block');
+				// make the ajax call
+				$.ajax({
+					type: "POST",
+					url: "requestJSON.php",
+					cache: false,
+					data: formData,
+					dataType:  'json',
+				}).done(function(json) {
+					// AJAX JSON response format: {"type" : "success", "message" : "Thank-You for submitting the form!"}
+					
+					$('#requestSubmit').attr('disabled', false);
+					$('#requestLoading').css('display','none');
+					$('#requestMsg').removeClass().addClass(json.type).html(json.message).fadeIn('slow');
+					if(json.type == 'success')
+						$('#requestForm').clearForm();
+				});	
+			}
+		});
+	});
+	</script>
+	</body>
+</html>
