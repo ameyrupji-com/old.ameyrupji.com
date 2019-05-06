@@ -1,6 +1,6 @@
 <?php
 // set your API key here
-$api_key = "AIzaSyBlvouF_UlU-hQLJEWgA6jM9yPP9U3SBzk";
+$api_key = "";
 // format this string with the appropriate latitude longitude
 $url = '//maps.googleapis.com/maps/api/geocode/json?latlng=40.714224,-73.961452&sensor=false';
 // make the HTTP request

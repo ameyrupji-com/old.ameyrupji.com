@@ -11,7 +11,7 @@
 	<script src="../template/mobile/js/ios-orientationchange-fix.js"></script>
     <script src="../template/js/jquery.validate.js"></script>
     <!-- Geolocation -->
-	<script type="text/javascript"src="http://maps.googleapis.com/maps/api/js?key=AIzaSyBlvouF_UlU-hQLJEWgA6jM9yPP9U3SBzk&sensor=false"></script>
+	<script type="text/javascript"src="http://maps.googleapis.com/maps/api/js?key=&sensor=false"></script>
     <script type="text/javascript" src="http://maps.gstatic.com/intl/en_us/mapfiles/400d/maps2.api/main.js"></script>
 	<script src="../template/js/geolocation.js" type="text/javascript"></script>
     <script type="text/javascript">
