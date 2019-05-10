@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Amey Rupji Mobile :: Recent Work :: Agenda Manager</title>
+	<link rel="stylesheet" href="../template/mobile/css/jquery.mobile-1.0rc2.css" />
+	<script src="../template/js/jquery-1.7.1.min.js"></script>
+	<script src="../template/mobile/js/jquery.mobile-1.1.0.js"></script>
+    <script src="../template/js/jquery.validate.js"></script>
+    <link rel="shortcut icon" href="../template/images/favicon.gif">
+	
+</head> 
+<body class="ui-mobile-viewport">
+	<div style="display:none; position:fixed;" id="menu">
+		<h1>Menu</h1>
+		<ul>
+			<li><a href="index.html"><img class="" alt="" src="../template/mobile/images/icons/homeLight.png">Home</a></li>
+			<li><a href="aboutMe.html"><img class="" alt="" src="../template/mobile/images/icons/aboutMeLight.png">About Me</a></li>
+			<li><a href="skills.html"><img class="" alt="" src="../template/mobile/images/icons/skillsLight.png">Skills</a></li>
+			<li><a href="work.html"><img class="" alt="" src="../template/mobile/images/icons/workLight.png">Work Experience</a></li>
+			<li><a href="resume.html"><img class="" alt="" src="../template/mobile/images/icons/resumeLight.png">Resume</a></li>
+			<li><a href="contact.html"><img class="" alt="" src="../template/mobile/images/icons/contactLight.png">Contact</a></li>
+		</ul>
+		<div id="menuFoot">
+			<span id="foot">Creative Commons Amey Rupji</span><br/>
+			<span id="fullWeb"><a href="../index.html?vmode=full"><strong>Full Website</strong></a></span>
+		</div>
+		<div id="menuFoot">
+			<span id="fullWeb"><a href="#">version m.alpha1</a></span>
+		</div>
+	</div>
+<div data-role="page" class="type-home" id="page">
+	<div data-role="header" data-position="inline" data-theme="b">
+    	<a href="" id="slideMenu" data-role="none" class="menu"> Menu</a>
+        <h1>Agenda Manager</h1> 
+        <a href="" data-rel="back" data-role="none" class="back"> Back</a>
+    </div>
+    
+	<div data-role="content-wrap">
+        <div id="adr-homeheader">
+            <a href="" id="ameyRupjiMobileLogo"></a>
+        </div>
+    	<div data-role="content" data-theme="d" class="ui-page-full">
+            <h1>A priority queue for a simplified agenda manager in a rule-based expert system shell</h1>
+    <h3><em>(Course - Analysis of Algorithms, Spring 2012)</em></h3>
+    <hr class="headerLine"/>
+    <h3>Goal</h3>
+    <hr class="headerLine"/>
+    <p>The goal of this project was to implement a simplified agenda manager which reads a list of rules with priorities from a file and created a heap by using a priority queue to run the manager</p>
+    <p><a href="/arupji/recentWork/agendaManager.pdf" target="_blank">View The full project specification</a></p>
+    
+    <h3>Team Members</h3><hr class="headerLine"/>
+    <p>Vishal Ghugare</p>
+    
+    <h3>Overview of the project</h3><hr class="headerLine"/>
+    <p><b>Implementation language: </b>C<p>
+    <p><b>Queue structure used</b><p>
+    <div id="loading" class="noMobile"><pre>typedef struct ListItem 
+{ 
+    int priority; 
+    char rule[RULE_LEN]; 
+    struct ListItem *next; 
+}</pre></div>
+	<h3>Implemented Functions</h3><hr class="headerLine"/>
+    <ul>
+    	<li><b>BuildQueue()</b><br/>
+        Builds a priority queue (heap) from an unsorted array of rule priority pairs. This function is usually called after inserting a rule into the queue by calling the Insert function. This function starts for the mid of the queue which is parent of the newest node inserted and runs a contest between the parent and newly added child. If the priority of parent is less than that of child then we interchange the parent and child. However the new parent might still be out of place at its new position, so have another contest between it and its parent in the tree and run the above check for the parent. We repeat this process until the new item either loses a contest (and therefore is in correct position in the heap) or reaches the root node.
+        <div id="loading" class="noMobile"><pre>Sorry I cannot provide the code as this course is currently ongoing. If you still want the code please 
+request for it submitting the form below</pre></div>
+        </li>
+        <li><b>Heapify()</b><br/>
+        This function is used by BuildQueue function to maintain the heap properly. When we add a new rule to the heap, a new node is added at the end of the queue. However, simply placing the new rule at that position is likely to violate the property of heap. That is, the new item might have a priority that is greater than the priority of its parent. The solution after placing the new item in the end of the queue, have a contest between the new item added and its parent in the tree. If the new item has higher priority, swap it with its parent. However the new item might still be out of place at its new position, so have another contest between it and its new parent in the tree. Repeat this process until the new item either loses a contest (and therefore is in correct position in the heap) or reaches the root node.
+        <div id="loading" class="noMobile"><pre>Sorry I cannot provide the code as this course is currently ongoing. If you still want the code please 
+request for it submitting the form below</pre></div>
+        </li>
+		<li><b>ExtractMax()</b><br/>
+        The insert function is used to add a new rule at the end of queue. This is done by first dynamically allocating a new node of the queue type and initializing it with the provided values. The queue structure is then maintained so that the Q_head pointer points to the starting node of the queue and Q_tail points to the ending node of the queue.
+        <div id="loading" class="noMobile"><pre>Sorry I cannot provide the code as this course is currently ongoing. If you still want the code please 
+request for it submitting the form below</pre></div>
+        </li>
+        <li><br><b>Delete()</b><br/>
+        Removes a rule from the queue by freeing the node from memory.
+        <div id="loading" class="noMobile"><pre>Sorry I cannot provide the code as this course is currently ongoing. If you still want the code please 
+request for it submitting the form below</pre></div>
+        </li>
+        <li><b>Main()</b><br//>
+        This function reads input file provided as arguments and performs the steps mentioned in the problem definition which are as follows:<br/>
+In each cycle, the agenda manager first deletes from the agenda the activated rule that was executed in a previous cycle. A list of new activated rules is given to the agenda manager to add to the agenda. Once a rule is added to the agenda, it remains there until it is executed. An agenda manager then determines the rule with highest priority for the inference engine to execute in this cycle. Only one rule can be executed in each cycle. A rule that has been executed and removed from the agenda may be put on the agenda again in the next cycle. The system halts when the agenda is empty or after it runs 30 cycles.<br/>
+It also checks input file for correct format while reading and displays necessary errors where ever required. The errors could be one of the following for the following rule input format:
+		<div id="loading" class="noMobile"><pre>rule1, priority1), (rule2, priority2) 
+(rule3, priority3)</pre></div>
+		<ul>
+        	<li>If there is no ‘(’ before rule1 string then it will give an error “Missing: opening bracket '('”</li>
+            <li>If there is no ‘,’ after rule1 then it will give an error “Missing: comma after rule!”</li>
+            <li>If priority1 is not detected as a number then it will give an error “Invalid priority for rule: rule1”</li>
+            <li>If there is no ‘)’ after priority1(numeric) then it will give an error “Missing: closing bracket ')' for rule:rule1”</li>
+            <li>Now if no ‘,’ is found after closing bracket then it will give an error “Missing comma after (rule1, priority1)”</li>
+            <li>If there is no ‘ ’(space after the ‘,’(comma)) then it will give an error “Missing space after (rule1, priority1),”</li>
+       	</ul>
+        This will be followed throughout the file</li>
+                <div id="loading" class="noMobile"><pre>Sorry I cannot provide the code as this course is currently ongoing. If you still want the code please 
+request for it submitting the form below</pre></div>
+        </li>
+    </ul>
+
+        </div>
+    </div>
+	<div data-role="footer" class="footer-docs" data-theme="f">
+    	<center>
+			<p style="color:#fff">Creative Commons Amey Rupji</p>
+        </center>
+	</div>
+</div>
+<script src="../template/mobile/js/ios-orientationchange-fix.js"></script>
+<script type="text/javascript">
+$(function () {   
+	$("#slideMenu").toggle(
+		function() {
+			$("#menu").css('display','block');
+			$("#menu").css('position','absolute');
+			$("#page").css('position','fixed');
+			$("#page").animate({marginLeft:"275px",},'slow',function(){ 
+				var startX;
+				var currentX;
+				var dx;
+				/*$('#page').live('swipeleft',function(event) {
+					$('#page').unbind('touchstart');
+					$('#page').unbind('touchmove');
+					$('#page').unbind('touchend');
+					$("#page").animate({marginLeft:"0px",},300,function(){
+						$("#menu").css('position','fixed');
+						$("#menu").css('display','none'); 
+					});
+					$("#page").css('position','absolute');
+				});*/
+				$('#page').bind('touchstart',function(e){
+					e.preventDefault();
+					startX = e.originalEvent.touches[0].pageX;
+				});
+				$('#page').bind('touchmove',function(e){
+					e.preventDefault();
+					currentX = e.originalEvent.touches[0].pageX;
+					dx = startX - currentX;
+					$("#page").animate({marginLeft:275 -dx,},0,function(){ 
+						if( dx > 265) {
+							$("#page").animate({marginLeft:"0px",},300,function(){
+								$("#menu").css('position','fixed');
+								$("#menu").css('display','none');
+							});
+							$("#page").css('position','absolute');
+							$('#page').unbind('touchstart');
+							$('#page').unbind('touchmove');
+							$('#page').unbind('touchend');
+						}
+					});
+				});
+				$('#page').bind('touchend',function(e){
+					e.preventDefault();
+					if($('#my_div').is(':hidden'))
+					{
+						$('#page').unbind('touchstart');
+						$('#page').unbind('touchmove');
+						$('#page').unbind('touchend');
+					}
+					else
+					{	 
+						$("#page").animate({marginLeft:275 -dx,},0,function(){ 
+							if( dx < 100) {
+								$("#page").animate({marginLeft:"275px",},300,function(){ });
+							}
+							else {
+								$("#page").animate({marginLeft:"0px",},300,function(){ 
+									$("#menu").css('position','fixed');
+									$("#menu").css('display','none');
+									$("#page").css('position','absolute');
+									$('#page').unbind('touchstart');
+									$('#page').unbind('touchmove');
+									$('#page').unbind('touchend');
+								});
+							}
+						});
+					}
+				});
+			});
+		},
+		function() {
+			$("#page").animate({marginLeft:"0px",},300,function(){
+				$("#menu").css('position','fixed');
+				$("#menu").css('display','none');
+			});
+			$("#page").css('position','absolute');
+		}
+	);
+});
+</script>
+</body>
+</html>

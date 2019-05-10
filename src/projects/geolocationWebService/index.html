@@ -58,12 +58,6 @@ function getLocation(lat, lang)
 	);
 }
 </script>
-<?php 
-	$latitude = $_GET['lat'];
-	$longitude = $_GET['lang'];
-	printf("<script type='text/javascript'>window.onload=function(){getLocation(%e,%e)}</script>",$latitude,$longitude);
-	// http://stackoverflow.com/questions/2054635/reverse-geocoding-with-google-map-api-and-php-to-get-nearest-location-using-lat	
-?>
 </div>
 
 </html>
