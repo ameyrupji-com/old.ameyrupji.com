@@ -12,7 +12,7 @@ deploy_base_image: &deploy_base_image
   circleci/python:2.7
 
 working_directory: &working_directory
-  ~/ameyrupji
+  /home/circleci/old-ameyrupji-com
 
 build_default_config: &build_default_config
   docker:
@@ -25,7 +25,7 @@ deploy_default_config: &deploy_default_config
   working_directory: *working_directory
 
 repo_cache_key: &repo_cache_key
-  ameyrupji-com-{{ .Branch }}-{{ .Revision }}
+  old-ameyrupji-com-{{ .Branch }}-{{ .Revision }}
 
 restore_repo: &restore_repo
   restore_cache:
@@ -69,16 +69,16 @@ jobs:
     steps:
       - *restore_repo
       - aws-s3/copy:
-          from: /home/circleci/ameyrupji/src/dist/ 
-          to: 's3://ameyrupji.com/'
+          from: /home/circleci/old-ameyrupji-com/src/dist/ 
+          to: 's3://old.ameyrupji.com/'
           arguments: --recursive
   upload-develop:
     <<: *deploy_default_config
     steps:
       - *restore_repo
       - aws-s3/copy:
-          from: /home/circleci/ameyrupji/src/dist/ 
-          to: 's3://beta.ameyrupji.com/'
+          from: /home/circleci/old-ameyrupji-com/src/dist/ 
+          to: 's3://old.ameyrupji.com/'
           arguments: --recursive
   upload-branches:
     <<: *deploy_default_config

@@ -1,0 +1,53 @@
+<h1>Facebook Activity Feed</h1>
+<ul>
+    <li>
+        <div id="fb-root"></div>
+        <script>(function(d, s, id) {
+          var js, fjs = d.getElementsByTagName(s)[0];
+          if (d.getElementById(id)) return;
+          js = d.createElement(s); js.id = id;
+          js.src = "//connect.facebook.net/en_US/all.js#xfbml=1&appId=277455178940755";
+          fjs.parentNode.insertBefore(js, fjs);
+        }(document, 'script', 'facebook-jssdk'));</script>
+        <div class="fb-activity" data-site="http://myweb.ttu.edu/arupji/" data-width="275" data-height="250" data-header="false" data-colorscheme="dark" data-border-color="#32394A" data-font="arial" data-recommendations="true" style="display:none z-index: 5;"></div>
+    </li>
+</ul>
+<h1>Twitter Activity Feed</h1>
+<ul>
+    <li>
+        <script charset="utf-8" src="http://widgets.twimg.com/j/2/widget.js"></script>
+        <script>
+        new TWTR.Widget({
+          version: 2,
+          type: 'list',
+          rpp: 30,
+          interval: 30000,
+          title: '',
+          subject: '',
+          width: 275,
+          height: 250,
+          theme: {
+            shell: {
+              background: '#32394a',
+              color: '#949494'
+            },
+            tweets: {
+              background: '#32394a',
+              color: '#ffffff',
+              links: '#ffffff'
+            }
+          },
+          features: {
+            scrollbar: false,
+            loop: false,
+            live: true,
+            behavior: 'all'
+          }
+        }).render().setList('ameyrupji', '').start();
+        </script>
+    </li>
+    
+</ul>
+<div id="menuFoot">
+    <span id="foot">Creative Commons Amey Rupji</span><br/>
+</div>
