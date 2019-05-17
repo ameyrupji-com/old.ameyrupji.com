@@ -50,8 +50,6 @@ workflows:
               branches:
                 only: master
       - upload-develop:
-          requires:
-              - build
           filters:
               branches:
                 only: develop
