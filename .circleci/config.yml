@@ -22,7 +22,7 @@ jobs:
     steps:
       - checkout
       - aws-s3/copy:
-          from: /home/circleci/old-ameyrupji-com/src/dist/ 
+          from: /home/circleci/old-ameyrupji-com/src/
           to: 's3://old.ameyrupji.com/'
           arguments: --recursive
   upload-develop:
@@ -30,7 +30,7 @@ jobs:
     steps:
       - checkout
       - aws-s3/copy:
-          from: /home/circleci/old-ameyrupji-com/src/dist/ 
+          from: /home/circleci/old-ameyrupji-com/src/
           to: 's3://old.beta.ameyrupji.com/'
           arguments: --recursive
 
