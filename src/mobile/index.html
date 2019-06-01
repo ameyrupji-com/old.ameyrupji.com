@@ -1,4 +1,4 @@
-<?php if (substr_count($_SERVER['HTTP_ACCEPT_ENCODING'], 'gzip')) ob_start("ob_gzhandler"); else ob_start(); ?>
+
 <!DOCTYPE html>
 <html>
 <head manifest="manifest.mf">
@@ -37,12 +37,12 @@
 	<link rel="apple-touch-icon" sizes="72x72" href="../template/mobile/images/touchIcons/apple-touch-icon-ipad.png" />
 	<link rel="apple-touch-icon" sizes="114x114" href="../template/mobile/images/touchIcons/apple-touch-icon-iphone4.png" />
 	<link rel="apple-touch-startup-image" sizes="768x1004" href="../template/mobile/images/touchIcons/apple-touch-startup-image-768x1004.png" />
-	<link href="http://myweb.ttu.edu/arupji/template/mobile/images/touchIcons/apple-touch-startup-image-320x460.png" rel="apple-touch-startup-image">
-	<link media="screen and (min-device-width: 481px) and (max-device-width: 1024px) and (orientation:landscape)" href="http://myweb.ttu.edu/arupji/template/mobile/images/touchIcons/apple-touch-startup-image-768x1004.png" rel="apple-touch-startup-image">
-	<link media="screen and (min-device-width: 481px) and (max-device-width: 1024px) and (orientation:portrait)" href="http://myweb.ttu.edu/arupji/template/mobile/images/touchIcons/" rel="apple-touch-startup-image">
+	<link href="../template/mobile/images/touchIcons/apple-touch-startup-image-320x460.png" rel="apple-touch-startup-image">
+	<link media="screen and (min-device-width: 481px) and (max-device-width: 1024px) and (orientation:landscape)" href="../template/mobile/images/touchIcons/apple-touch-startup-image-768x1004.png" rel="apple-touch-startup-image">
+	<link media="screen and (min-device-width: 481px) and (max-device-width: 1024px) and (orientation:portrait)" href="../template/mobile/images/touchIcons/" rel="apple-touch-startup-image">
 </head> 
 <body> 
-<?php include('menu.html'); ?>
+
 <div data-role="page" class="type-home">
 	<div data-role="content">
 		<div class="content-secondary">
@@ -50,17 +50,15 @@
             	<a href="" id="ameyRupjiMobileLogo"></a>
 			</div>
 			<ul data-role="listview" data-inset="true" data-theme="c" data-dividertheme="b">
-				<li><a href="aboutMe.php"><img class="ui-li-icon ui-li-thumb ui-corner-tl" alt="" src="../template/mobile/images/icons/aboutMe.png" >About Me</a></li>
-				<li><a href="skills.php"><img class="ui-li-icon ui-li-thumb ui-corner-tl" alt="" src="../template/mobile/images/icons/skills.png" >Skills</a></li>
-				<li><a href="work.php"><img class="ui-li-icon ui-li-thumb ui-corner-tl" alt="" src="../template/mobile/images/icons/work.png" >Work Experience</a></li>
-				<li><a href="resume.php"><img class="ui-li-icon ui-li-thumb ui-corner-tl" alt="" src="../template/mobile/images/icons/resume.png">Resume</a></li>
-                <li><a href="contact.php"><img class="ui-li-icon ui-li-thumb ui-corner-tl" alt="" src="../template/mobile/images/icons/contact.png">Contact</a></li>
+				<li><a href="aboutMe.html"><img class="ui-li-icon ui-li-thumb ui-corner-tl" alt="" src="../template/mobile/images/icons/aboutMe.png" >About Me</a></li>
+				<li><a href="skills.html"><img class="ui-li-icon ui-li-thumb ui-corner-tl" alt="" src="../template/mobile/images/icons/skills.png" >Skills</a></li>
+				<li><a href="work.html"><img class="ui-li-icon ui-li-thumb ui-corner-tl" alt="" src="../template/mobile/images/icons/work.png" >Work Experience</a></li>
+				<li><a href="resume.html"><img class="ui-li-icon ui-li-thumb ui-corner-tl" alt="" src="../template/mobile/images/icons/resume.png">Resume</a></li>
+        <li><a href="contact.html"><img class="ui-li-icon ui-li-thumb ui-corner-tl" alt="" src="../template/mobile/images/icons/contact.png">Contact</a></li>
 			</ul>
-            <ul data-role="listview" data-inset="true" data-theme="c" data-dividertheme="b">
-            	<li data-role="list-divider">Share &raquo;</li>
-				<li data-theme="d" id="social">
-                	
-                </li>
+      <ul data-role="listview" data-inset="true" data-theme="c" data-dividertheme="b">
+        <li data-role="list-divider">Share &raquo;</li>
+				<li data-theme="d" id="social"></li>
 			</ul>
 		</div><!--/content-primary-->	
         <div class="content-primary" >
@@ -77,7 +75,7 @@
             <ul data-role="listview" data-inset="true" data-theme="c" data-dividertheme="b">
             	<li data-role="list-divider">Recent Work &raquo;</li>
                 <li data-theme="d">
-                	<a href="agendaManager.php">
+                	<a href="agendaManager.html">
                         <img src="../recentWork/agendaManager/agendaManagerMobile.png" alt="Agenda Manager" />
                         <h3>Agenda Manager</h3>
                         <p>Built a heap by using priority queue to run a agenda manager</p>
@@ -86,7 +84,7 @@
 			</ul>
 			<nav>
 				<ul data-role="listview" data-inset="true" data-theme="b" data-dividertheme="b" data-ajax="false">
-					<li class="external"><a href="http://www.webpages.ttu.edu/arupji/index.php?vmode=full" rel="external" data-ajax="false"><img class="ui-li-icon ui-li-thumb ui-corner-tl" alt="" src="../template/mobile/images/icons/full.png">Full Website</a></li>
+					<li class="external"><a href="../index.html?vmode=full" rel="external" data-ajax="false"><img class="ui-li-icon ui-li-thumb ui-corner-tl" alt="" src="../template/mobile/images/icons/full.png">Full Website</a></li>
 				</ul>
 			</nav>
 		</div>

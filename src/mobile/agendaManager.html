@@ -1,17 +1,54 @@
+<!DOCTYPE html>
 <html>
-	<head>
-    	
-    </head>
-	<body>
-	<script type="text/javascript" language="javascript" src="../../template/js/jquery-1.7.1.min.js"></script>
-    <script src="../../template/js/jquery.validate.js"></script>
-   	<h1>A priority queue for a simplified agenda manager in a rule-based expert system shell</h1>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Amey Rupji Mobile :: Recent Work :: Agenda Manager</title>
+	<link rel="stylesheet" href="../template/mobile/css/jquery.mobile-1.0rc2.css" />
+	<script src="../template/js/jquery-1.7.1.min.js"></script>
+	<script src="../template/mobile/js/jquery.mobile-1.1.0.js"></script>
+    <script src="../template/js/jquery.validate.js"></script>
+    <link rel="shortcut icon" href="../template/images/favicon.gif">
+	
+</head> 
+<body class="ui-mobile-viewport">
+	<div style="display:none; position:fixed;" id="menu">
+		<h1>Menu</h1>
+		<ul>
+			<li><a href="index.html"><img class="" alt="" src="../template/mobile/images/icons/homeLight.png">Home</a></li>
+			<li><a href="aboutMe.html"><img class="" alt="" src="../template/mobile/images/icons/aboutMeLight.png">About Me</a></li>
+			<li><a href="skills.html"><img class="" alt="" src="../template/mobile/images/icons/skillsLight.png">Skills</a></li>
+			<li><a href="work.html"><img class="" alt="" src="../template/mobile/images/icons/workLight.png">Work Experience</a></li>
+			<li><a href="resume.html"><img class="" alt="" src="../template/mobile/images/icons/resumeLight.png">Resume</a></li>
+			<li><a href="contact.html"><img class="" alt="" src="../template/mobile/images/icons/contactLight.png">Contact</a></li>
+		</ul>
+		<div id="menuFoot">
+			<span id="foot">Creative Commons Amey Rupji</span><br/>
+			<span id="fullWeb"><a href="../index.html?vmode=full"><strong>Full Website</strong></a></span>
+		</div>
+		<div id="menuFoot">
+			<span id="fullWeb"><a href="#">version m.alpha1</a></span>
+		</div>
+	</div>
+<div data-role="page" class="type-home" id="page">
+	<div data-role="header" data-position="inline" data-theme="b">
+    	<a href="" id="slideMenu" data-role="none" class="menu"> Menu</a>
+        <h1>Agenda Manager</h1> 
+        <a href="" data-rel="back" data-role="none" class="back"> Back</a>
+    </div>
+    
+	<div data-role="content-wrap">
+        <div id="adr-homeheader">
+            <a href="" id="ameyRupjiMobileLogo"></a>
+        </div>
+    	<div data-role="content" data-theme="d" class="ui-page-full">
+            <h1>A priority queue for a simplified agenda manager in a rule-based expert system shell</h1>
     <h3><em>(Course - Analysis of Algorithms, Spring 2012)</em></h3>
     <hr class="headerLine"/>
     <h3>Goal</h3>
     <hr class="headerLine"/>
     <p>The goal of this project was to implement a simplified agenda manager which reads a list of rules with priorities from a file and created a heap by using a priority queue to run the manager</p>
-    <p><a href="../../recentWork/agendaManager.pdf" target="_blank">View The full project specification</a></p>
+    <p><a href="../recentWork/agendaManager/agendaManager.pdf" target="_blank">View The full project specification</a></p>
     
     <h3>Team Members</h3><hr class="headerLine"/>
     <p>Vishal Ghugare</p>
@@ -67,79 +104,95 @@ request for it submitting the form below</pre></div>
         </li>
     </ul>
 
-    
-    <div  class="noMobile">
-    <h3>Request Code</h3><hr class="headerLine"/>
-    <div style="width:750px;" >
-
-
-        <form name="requestForm" id="requestForm" method="post" action="../requestJSON.php" class="validate">
-            <p>Please enter your details below to request my a copy of my project implementation. Give me a day or two to get back to you.</p>
-            <p><strong>Note:</strong><br/>Please Enter a valid reason for the requesting the code and please use official email (no personal email like gmail, yahoo etc.) for faster response</p>
-            <div id="requestMsg"></div>
-            <div id="requestLoading" style="display: none;">
-                <img alt="loading" src="../template/images/ajax_load.gif" > Sending Email...
-            </div>
-            <!--<div id="map_canvas" style="width:100%; height:100px;"></div>-->
-            <div class="input-box">
-                <label for="name"><span class="reqBlue">*</span> Name</label>  
-                <input type="text" name="name" id="name" value="" placeholder="Name" class="required"/> 
-            </div>
-            <div class="input-box">
-                <label for="email"><span class="reqBlue">*</span> Email</label>
-                <input type="text" name="email" id="email" value="" placeholder="Email" class="required email"/> 
-            </div>
-            <div class="input-box">
-                <label for="reason"><span class="reqBlue">*</span> Reason for requesting code</label>
-                <input type="text" name="reason" id="reason" value="" placeholder="Reason"  class="required"/> 
-            </div>
-            <div class="submit">
-                <span class="req"><span class="reqBlue">*</span> Required Fields</span>
-                <button type="submit" id="requestSubmit" style="float:right;">Submit</button>
-                <div class="locationName"><img alt="loading" src="../template/images/ajax_load.gif"><div class="text"></div></div>
-                <a class="location off nyroModal" href="../geolocation.html"></a>
-            </div>
-        </form>
+        </div>
     </div>
-    </div>
-	<script type="text/javascript">
-	$(function() {
-		getLocation();
-		$('#requestForm').validate({
-			rules: {
-				name: "required",
-				email: "required",
-				reason: "required"
-			},
-			messages: {
-				name: "Please enter your Name",
-				email: "Please enter your Email",
-				reason: "Please enter a reason for requesting my code"
-			},
-			submitHandler: function( form ) {
-				// disable submit button
-				$('#requestSubmit').attr('disabled', true);
-				var formData = $("#requestForm").serialize();
-				$('#requestLoading').css('display','block');
-				// make the ajax call
-				$.ajax({
-					type: "POST",
-					url: "requestJSON.php",
-					cache: false,
-					data: formData,
-					dataType:  'json',
-				}).done(function(json) {
-					// AJAX JSON response format: {"type" : "success", "message" : "Thank-You for submitting the form!"}
-					
-					$('#requestSubmit').attr('disabled', false);
-					$('#requestLoading').css('display','none');
-					$('#requestMsg').removeClass().addClass(json.type).html(json.message).fadeIn('slow');
-					if(json.type == 'success')
-						$('#requestForm').clearForm();
-				});	
-			}
-		});
-	});
-	</script>
-	</body>
+	<div data-role="footer" class="footer-docs" data-theme="f">
+    	<center>
+			<p style="color:#fff">Creative Commons Amey Rupji</p>
+        </center>
+	</div>
+</div>
+<script src="../template/mobile/js/ios-orientationchange-fix.js"></script>
+<script type="text/javascript">
+$(function () {   
+	$("#slideMenu").toggle(
+		function() {
+			$("#menu").css('display','block');
+			$("#menu").css('position','absolute');
+			$("#page").css('position','fixed');
+			$("#page").animate({marginLeft:"275px",},'slow',function(){ 
+				var startX;
+				var currentX;
+				var dx;
+				/*$('#page').live('swipeleft',function(event) {
+					$('#page').unbind('touchstart');
+					$('#page').unbind('touchmove');
+					$('#page').unbind('touchend');
+					$("#page").animate({marginLeft:"0px",},300,function(){
+						$("#menu").css('position','fixed');
+						$("#menu").css('display','none'); 
+					});
+					$("#page").css('position','absolute');
+				});*/
+				$('#page').bind('touchstart',function(e){
+					e.preventDefault();
+					startX = e.originalEvent.touches[0].pageX;
+				});
+				$('#page').bind('touchmove',function(e){
+					e.preventDefault();
+					currentX = e.originalEvent.touches[0].pageX;
+					dx = startX - currentX;
+					$("#page").animate({marginLeft:275 -dx,},0,function(){ 
+						if( dx > 265) {
+							$("#page").animate({marginLeft:"0px",},300,function(){
+								$("#menu").css('position','fixed');
+								$("#menu").css('display','none');
+							});
+							$("#page").css('position','absolute');
+							$('#page').unbind('touchstart');
+							$('#page').unbind('touchmove');
+							$('#page').unbind('touchend');
+						}
+					});
+				});
+				$('#page').bind('touchend',function(e){
+					e.preventDefault();
+					if($('#my_div').is(':hidden'))
+					{
+						$('#page').unbind('touchstart');
+						$('#page').unbind('touchmove');
+						$('#page').unbind('touchend');
+					}
+					else
+					{	 
+						$("#page").animate({marginLeft:275 -dx,},0,function(){ 
+							if( dx < 100) {
+								$("#page").animate({marginLeft:"275px",},300,function(){ });
+							}
+							else {
+								$("#page").animate({marginLeft:"0px",},300,function(){ 
+									$("#menu").css('position','fixed');
+									$("#menu").css('display','none');
+									$("#page").css('position','absolute');
+									$('#page').unbind('touchstart');
+									$('#page').unbind('touchmove');
+									$('#page').unbind('touchend');
+								});
+							}
+						});
+					}
+				});
+			});
+		},
+		function() {
+			$("#page").animate({marginLeft:"0px",},300,function(){
+				$("#menu").css('position','fixed');
+				$("#menu").css('display','none');
+			});
+			$("#page").css('position','absolute');
+		}
+	);
+});
+</script>
+</body>
 </html>

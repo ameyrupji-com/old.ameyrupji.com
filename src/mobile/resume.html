@@ -16,7 +16,25 @@
 	
 </head> 
 <body class="ui-mobile-viewport">
-<?php include('menu.html'); ?>
+	<div style="display:none; position:fixed;" id="menu">
+		<h1>Menu</h1>
+		<ul>
+			<li><a href="index.html"><img class="" alt="" src="../template/mobile/images/icons/homeLight.png">Home</a></li>
+			<li><a href="aboutMe.html"><img class="" alt="" src="../template/mobile/images/icons/aboutMeLight.png">About Me</a></li>
+			<li><a href="skills.html"><img class="" alt="" src="../template/mobile/images/icons/skillsLight.png">Skills</a></li>
+			<li><a href="work.html"><img class="" alt="" src="../template/mobile/images/icons/workLight.png">Work Experience</a></li>
+			<li><a href="resume.html"><img class="" alt="" src="../template/mobile/images/icons/resumeLight.png">Resume</a></li>
+			<li><a href="contact.html"><img class="" alt="" src="../template/mobile/images/icons/contactLight.png">Contact</a></li>
+		</ul>
+		<div id="menuFoot">
+			<span id="foot">Creative Commons Amey Rupji</span><br/>
+			<span id="fullWeb"><a href="../index.html?vmode=full"><strong>Full Website</strong></a></span>
+		</div>
+		<div id="menuFoot">
+			<span id="fullWeb"><a href="#">version m.alpha1</a></span>
+		</div>
+	</div>
+
 <div data-role="page" class="type-home" id="page">
 	<div data-role="header" data-position="inline" data-theme="b">
         <a href="" id="slideMenu" data-role="none" class="menu"> Menu</a>
@@ -54,7 +72,12 @@
                 </div>
                 <a id="locationImg" class="location off nyroModal" href="#"></a>
         	</form>
-            <div id="msg"></div>
+			<div id="msg"></div>
+			<div style="background: rgba(255, 255, 255, 0.7); -webkit-backdrop-filter: blur(30px); backdrop-filter: blur(30px); box-shadow: none; border: 1px solid #ddd; margin-top: 20px; padding: 0 10px; border-radius: 10px;">
+				<div style="margin: 0 auto;">
+						<p style="margin: 10px 0;padding-top: 0;"><strong>Note: </strong>In the original website submitting the form would send an email with attachment containing my resume and projects that I have worked on. This functionality is disables on this website but you can look at my resume from that time by clicking on this link: <a href="../assets/old-ameyrupji-resume.pdf">Resume</a> <a href="../assets/old-ameyrupji-projects.pdf">Projects</a>. To get the original code refer to <a href="https://github.com/ameyrupji-com/old.ameyrupji.com/tree/v0.1">version v0.1 on GitHub</a>.</p>
+				</div>
+			</div>
         </div>
     </div>
 	<div data-role="footer" class="footer-docs" data-theme="f">
